@@ -20,10 +20,10 @@ export const buildApp = (): Application => {
   app.set('trust proxy', 1);
 
   // security & infra
-  app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
+  app.use(helmet());
   app.use(
     cors({
-      origin: env.CLIENT_URL,
+      origin: env.CLIENT_URLS,
       credentials: true,
       methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
     }),

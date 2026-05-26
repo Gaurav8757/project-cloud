@@ -13,10 +13,17 @@ const startServer = async (): Promise<void> => {
   initSocket(server);
 
   server.listen(env.PORT, () => {
+    // Extract host from CLIENT_URL to construct dynamic URLs
+    const clientHostname = new URL(env.CLIENT_URL).hostname;
+    const protocol = env.NODE_ENV === 'production' ? 'https' : 'http';
+    const baseUrl = `${protocol}://${clientHostname}:${env.PORT}`;
+    const apiUrl = `${baseUrl}${env.API_PREFIX}`;
+    const docsUrl = `${baseUrl}/api/docs`;
+
     logger.info(`🚀 Project Cloud API ready`);
-    logger.info(`   → http://localhost:${env.PORT}`);
-    logger.info(`   → API:    http://localhost:${env.PORT}${env.API_PREFIX}`);
-    logger.info(`   → Docs:   http://localhost:${env.PORT}/api/docs`);
+    logger.info(`   → ${baseUrl}`);
+    logger.info(`   → API:    ${apiUrl}`);
+    logger.info(`   → Docs:   ${docsUrl}`);
     logger.info(`   → Env:    ${env.NODE_ENV}`);
   });
 
