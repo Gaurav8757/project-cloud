@@ -37,7 +37,7 @@ const startServer = async (): Promise<void> => {
     });
     setTimeout(() => {
       logger.error('Forcing shutdown after 10s');
-      process.exit(1);
+      // process.exit(1);
     }, 10_000).unref();
   };
 
