@@ -7,7 +7,10 @@ const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
   PORT: z.coerce.number().default(4000),
   API_PREFIX: z.string().default('/api/v1'),
-  CLIENT_URL: z.string().default('http://localhost:5173'),
+  CLIENT_URL: z.string()
+    .url('Invalid CLIENT_URL format')
+    .transform(url => new URL(url).origin)
+    .default('http://localhost:5173'),
 
   DATABASE_URL: z.string(),
 
