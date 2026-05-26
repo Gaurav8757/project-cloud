@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\com\\Downloads\\project-cloud\\backend\\src\\logs\\.b933a24908d97a22e1a5297bf781332c53c3a91c-audit.json",
+    "files": [
+        {
+            "date": 1779797173973,
+            "name": "C:\\Users\\com\\Downloads\\project-cloud\\backend\\src\\logs\\error-2026-05-26.log",
+            "hash": "2628aa15c6d846905a3de1cc0ccf0facc0e0e5d5f2cc2b837c0a45fc2e80617e"
+        }
+    ],
+    "hashType": "sha256"
+}
