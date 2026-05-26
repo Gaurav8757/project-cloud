@@ -13,8 +13,9 @@ const startServer = async (): Promise<void> => {
   initSocket(server);
 
   server.listen(env.PORT, () => {
-    // Extract host from CLIENT_URL to construct dynamic URLs
-    const clientHostname = new URL(env.CLIENT_URL).hostname;
+    // Use first CLIENT_URL for logging
+    const primaryUrl = env.CLIENT_URLS[0];
+    const clientHostname = new URL(primaryUrl).hostname;
     const protocol = env.NODE_ENV === 'production' ? 'https' : 'http';
     const baseUrl = `${protocol}://${clientHostname}:${env.PORT}`;
     const apiUrl = `${baseUrl}${env.API_PREFIX}`;

@@ -10,7 +10,7 @@ let io: SocketIOServer | null = null;
 
 export const initSocket = (server: HttpServer): SocketIOServer => {
   io = new SocketIOServer(server, {
-    cors: { origin: env.CLIENT_URL, credentials: true },
+    cors: { origin: env.CLIENT_URLS, credentials: true },
   });
 
   // Auth handshake middleware
