@@ -25,12 +25,12 @@ export const notificationRepository = {
     return { items, total, unread };
   },
 
-  markAsRead: (id: string, userId: string) =>
-    prisma.notification.update({ where: { id }, data: { read: true } }).catch(() => null) &&
-    prisma.notification.updateMany({ where: { id, userId }, data: { read: true } }),
+  markAsRead: async (id: string, userId: string) =>
+    await prisma.notification.update({ where: { id }, data: { read: true } }).catch(() => null) &&
+    await prisma.notification.updateMany({ where: { id, userId }, data: { read: true } }),
 
-  markAllRead: (userId: string) =>
-    prisma.notification.updateMany({ where: { userId, read: false }, data: { read: true } }),
+  markAllRead: async (userId: string) =>
+    await prisma.notification.updateMany({ where: { userId, read: false }, data: { read: true } }),
 
-  delete: (id: string, userId: string) => prisma.notification.deleteMany({ where: { id, userId } }),
+  delete: async (id: string, userId: string) => await prisma.notification.deleteMany({ where: { id, userId } }),
 };

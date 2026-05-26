@@ -16,6 +16,7 @@
     "declaration": false,
     "sourceMap": true,
     "baseUrl": "./src",
+    
     "paths": {
       "@/*": ["*"],
       "@config/*": ["config/*"],

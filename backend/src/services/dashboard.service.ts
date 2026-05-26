@@ -6,7 +6,7 @@ export const dashboardService = {
   async overview(userId: string) {
     const projectFilter = {
       OR: [{ ownerId: userId }, { members: { some: { userId } } }],
-    } as const;
+    };
 
     const [
       totalProjects,
@@ -87,7 +87,7 @@ export const dashboardService = {
   async upcoming(userId: string) {
     const projectFilter = {
       OR: [{ ownerId: userId }, { members: { some: { userId } } }],
-    } as const;
+    };
 
     return prisma.task.findMany({
       where: {

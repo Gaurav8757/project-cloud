@@ -1,3 +1,5 @@
+import '../env';
+
 export type Role = 'ADMIN' | 'MANAGER' | 'MEMBER';
 export type ProjectStatus = 'PLANNING' | 'ACTIVE' | 'ON_HOLD' | 'COMPLETED' | 'ARCHIVED';
 export type TaskStatus = 'TODO' | 'IN_PROGRESS' | 'REVIEW' | 'COMPLETED';
