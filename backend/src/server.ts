@@ -14,7 +14,7 @@ const startServer = async (): Promise<void> => {
 
   server.listen(env.PORT, () => {
     // Use first CLIENT_URL for logging
-    const primaryUrl = process.env.MY_URL || "";
+    const primaryUrl = process.env.MY_URL || 'http://localhost';
     const clientHostname = new URL(primaryUrl).hostname;
     const protocol = env.NODE_ENV === 'production' ? 'https' : 'http';
     const baseUrl = `${protocol}://${clientHostname}`;
