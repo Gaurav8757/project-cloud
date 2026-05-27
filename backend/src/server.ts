@@ -14,10 +14,10 @@ const startServer = async (): Promise<void> => {
 
   server.listen(env.PORT, () => {
     // Use first CLIENT_URL for logging
-    const primaryUrl = env.CLIENT_URLS[0];
+    const primaryUrl = process.env.MY_URL || "";
     const clientHostname = new URL(primaryUrl).hostname;
     const protocol = env.NODE_ENV === 'production' ? 'https' : 'http';
-    const baseUrl = `${protocol}://${clientHostname}:${env.PORT}`;
+    const baseUrl = `${protocol}://${clientHostname}`;
     const apiUrl = `${baseUrl}${env.API_PREFIX}`;
     const docsUrl = `${baseUrl}/api/docs`;
 

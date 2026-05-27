@@ -17,8 +17,10 @@
     "seed": "tsx src/database/seed.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.22.0",
+    "@prisma/adapter-better-sqlite3": "^7.8.0",
+    "@prisma/client": "^7.8.0",
     "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^12.10.0",
     "compression": "^1.7.5",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -39,6 +41,7 @@
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/compression": "^1.7.5",
     "@types/cookie-parser": "^1.4.7",
     "@types/cors": "^2.8.17",
@@ -52,7 +55,7 @@
     "@typescript-eslint/parser": "^8.18.0",
     "eslint": "^9.16.0",
     "prettier": "^3.4.2",
-    "prisma": "^5.22.0",
+    "prisma": "^7.8.0",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }

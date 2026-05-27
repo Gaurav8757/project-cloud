@@ -1,5 +1,5 @@
 import { prisma } from '../config/prisma';
-import type { Prisma } from '@prisma/client';
+import type { Prisma } from '../generated/prisma/client';
 
 export const notificationRepository = {
   create: (data: Prisma.NotificationCreateInput) => prisma.notification.create({ data }),
