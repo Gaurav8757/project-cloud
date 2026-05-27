@@ -7,4 +7,6 @@ src/logs/*.log
 prisma/dev.db
 prisma/dev.db-journal
 prisma/migrations/dev
+
 .DS_Store
+dev.db
